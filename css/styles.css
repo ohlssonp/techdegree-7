@@ -4,7 +4,7 @@
 }
 
 body {
-  overflow:auto;
+  overflow-x:hidden;
 }
 a, p, h1, h2, h3, li, input {
   font-family: 'Nunito', sans-serif;
@@ -161,7 +161,7 @@ main {
 
 .headline {
   flex: 1;
-  margin-right: 10px;
+  margin-left: 11px;
 }
 
 .grey-area {
@@ -281,7 +281,7 @@ main {
 .members-container {
   display: flex;
   align-items: center;
-  padding: 5%;
+  padding: 5% 0%;
   border-top: solid 1px #bebebe;
   width: 100%;
   flex-direction: column;
@@ -306,7 +306,7 @@ main {
 }
 
 .traffic-nav-link {
-  background-color: #4CAF50;
+  background-color: #3cbd43;
   border: none;
   color: white;
   text-align: center;
@@ -317,7 +317,11 @@ main {
   border-radius: 40px;
   margin: 31px 10px 3px -5px;
   padding: 4%;
-      font-family: 'Nunito:wght@300', sans-serif;
+  font-family: 'Nunito:wght@300', sans-serif;
+}
+
+.traffic-nav-link.active {
+  background-color: #3d7740; 
 }
 
 .dropdown {
@@ -600,55 +604,56 @@ padding: 4%;
   background-color: #f4f4f4;
 }
 @media (min-width: 1024px) {
-  .members-container {
-    flex-direction: row;
-  }
-
-
   .grey-area {
     width: 74vw;
   }
-
-  .members-wrapper {
-    grid-template-columns: repeat(2, 1fr);
+  .alert-Banner {
+    margin: 4% 4%;
   }
+  .main-content {
+    margin-left:-5%;
+  }
+  .alert-Banner {
+    margin: 4% 3.5%;
+    width: 98%;
+    }
+    .wrapper-form {
+      margin-left: -5%;
+  }
+}
 
+@media (min-width: 768px) {
   .form-field,
   .form-area,
   .button-primary,
   .message,
   .settings {
     width: 40vw;
-    margin: 3% auto;
+    margin: 2.7% auto;
   }
-
-  #save,
-  .button-disabled {
-    width: 19vw;
-  }
-
   .wrapper-form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 84vw;
   }
-}
-
-@media (min-width: 768px) {
+  .members-container {
+    flex-direction: row;
+  }
   .traffic-nav {
     margin: 0;
   }
 
   .alert-Banner {
-    margin: 4% -3%;
-  }
+    margin: 4% 2.5%;
+    width: 95%;
+}
+  
   .right-header {
     padding: 6px 60px 7px 12px;
   }
   .form-area {
     height: 11.5vw;
   }
-
   .message,
   .settings {
     margin-top: 2%;
@@ -659,22 +664,20 @@ padding: 4%;
     text-align: left;
   }
   .grey-area {
-    width: 75vw;
+    width: 70vw;
     height: 3.5rem;
   }
   .nav-bar {
     display: block;
-    width: 4.3vw;
+    width: 50px;
     z-index: 1000;
   }
-
   .grid-container {
     grid-template-columns: 1fr;
     grid-template-areas:
       "header header"
       "navigation main";
   }
-
   .form-field {
     height: 5vw;
   }
@@ -685,22 +688,21 @@ padding: 4%;
   .social-container {
     width: 98.5%;
 }
-
   .daily {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
-
+  .daily h3 {
+    margin-left:2%;
+  }
   .widget-container-half {
     width: 37.7vw !important;
     height: 23vw;
   }
-
   .widget-container-full {
     height: 42vw;
   }
-
   .student-name {
     font-size: 1.2em;
   }
@@ -717,8 +719,25 @@ padding: 4%;
   .traffic-nav-link {
     padding: 7%;
   }
-
   main {
-    padding: 0px 0px 20px 40px;
+    padding: 0px 0px 0px 0px;
+    }
+  .members-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #save, .button-disabled {
+    width: 19vw;
+}
+.members-wrapper {
+  width: 100%;
+}
+.dateStyle {
+  margin-left: 4%;
+}
+.main-content {
+  margin-left:0%;
+}
+.traffic-header h3 {
+  margin-left: 0%;
   }
 }

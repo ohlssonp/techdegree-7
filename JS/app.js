@@ -6,6 +6,15 @@ let hourlyBtn = document.querySelector('.hourly-btn');
 let dailyBtn = document.querySelector('.daily-btn');
 let weeklyBtn = document.querySelector('.weekly-btn');
 let monthlyBtn = document.querySelector('.monthly-btn');
+let btnList = [hourlyBtn, dailyBtn, weeklyBtn, monthlyBtn];
+
+
+function removeActiveClasses() {
+  btnList.forEach((btn) => {
+    btn.classList.remove('active');
+  });
+}
+
 
 // data for traffic line chart
 let trafficData = {
@@ -78,29 +87,36 @@ let trafficChart = new Chart(trafficCanvas, {
 });
 
 hourlyBtn.addEventListener('click', () => {
+  removeActiveClasses();
+  hourlyBtn.classList.add('active');
   trafficChart.data.labels = hourlyTraffic.labels;
   trafficChart.data.datasets[0].data = hourlyTraffic.datasets[0].data;
   trafficChart.update();
 });
 
 dailyBtn.addEventListener('click', () => {
+  removeActiveClasses();
+  dailyBtn.classList.add('active');
   trafficChart.data.labels = dailyTraffic.labels;
   trafficChart.data.datasets[0].data = dailyTraffic.datasets[0].data;
   trafficChart.update();
 });
 
 weeklyBtn.addEventListener('click', () => {
+  removeActiveClasses();
+  weeklyBtn.classList.add('active');
   trafficChart.data.labels = weeklyTraffic.labels;
   trafficChart.data.datasets[0].data = weeklyTraffic.datasets[0].data;
   trafficChart.update();
 });
 
 monthlyBtn.addEventListener('click', () => {
+  removeActiveClasses();
+  monthlyBtn.classList.add('active');
   trafficChart.data.labels = monthlyTraffic.labels;
   trafficChart.data.datasets[0].data = monthlyTraffic.datasets[0].data;
   trafficChart.update();
 });
-
 // data for daily traffic bar chart
 const dailyData = {
   labels: ["S", "M", "T", "W", "T", "F", "S"],
